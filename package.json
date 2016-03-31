@@ -12,6 +12,11 @@
     "promise",
     "then"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/digiwano/paws-sdk.git"
+  },
+  "homepage": "https://github.com/digiwano/paws-sdk",
   "author": "Rando Christensen <digiwano@gmail.com>",
   "license": "ISC",
   "peerDependencies": {
