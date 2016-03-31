@@ -1,0 +1,20 @@
+{
+  "name": "paws-sdk",
+  "version": "1.0.0",
+  "description": "Sane Promises for aws-sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "aws-sdk",
+    "promise",
+    "then"
+  ],
+  "author": "Rando Christensen <digiwano@gmail.com>",
+  "license": "ISC",
+  "peerDependencies": {
+    "aws-sdk": "^2.2.0"
+  }
+}
