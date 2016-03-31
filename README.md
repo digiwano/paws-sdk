@@ -19,12 +19,17 @@ alongside `paws-sdk`.
 const AWS = require('paws-sdk');
 
 const dox = new AWS.DynamoDB.DocumentClient();
-dox.put({
-  TableName: 'someThings',
-  Item: someDoc
-})
-.then(response => console.log(response.data))
-.catch(error => console.error("Received Error during doc put:", error));
+dox
+  .put({
+    TableName: 'someThings',
+    Item: someDoc
+  })
+  .then(response => console.log(response.data))
+  .catch(error => console.error("Received Error during doc put:", error))
+  .then(() => dox.scan({
+    TableName: 'someThings'
+  }))
+  .then(response => console.log("existing documents", response.data));
 ```
 
 All components of the aws-sdk should be supported. If you find anything that
