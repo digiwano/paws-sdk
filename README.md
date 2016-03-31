@@ -35,6 +35,19 @@ dox
 All components of the aws-sdk should be supported. If you find anything that
 doesn't work, file a github issue or pull request.
 
+### Promise implementation
+
+paws-sdk assumes that native promises exist and can be found as the
+globally-defined `Promise`. If you are attempting to use this lib in
+a version of node which does not have native Promises, you must provide
+your own version before doing `require('paws-sdk');`. for example:
+
+```javascript
+global.Promise = require('lie'); // lie provides a bare-bones promises/A+ implementation
+var AWS = require('paws-sdk'); // because let's be honest, if you don't have Promise, you don't have const either.
+// use AWS as normal
+```
+
 ### alternatives
 
 There are a handful of other projects on npm which aim to provide something similar,
