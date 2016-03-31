@@ -26,7 +26,7 @@ if (typeof Promise !== 'undefined') {
           innerResolve(response);
         }
       });
-      this.send();
+      this.runTo();
     }).then(resolve, reject);
   };
 
