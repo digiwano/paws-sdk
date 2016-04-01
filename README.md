@@ -66,7 +66,7 @@ with their implementation for a few reasons:
    only thing you need to be a fully compliant promise is a .then() method,
    so why not just add .then() and .catch() to the request prototype instead?
 
-2. Their promise resolves with the request.data object, rather than the request
+2. Their promise resolves with the response.data object, rather than the response
    instance directly. True, often the .data is all you really care about, but
    if you DO need the other data on the request object, you'd have to do some
    wacky dance of caching the object, then getting a promise out of it, then
@@ -87,6 +87,11 @@ with their implementation for a few reasons:
 
    But hey, maybe all I need to do is code up a hacky implementation of
    lambdas-on-modern-node, publish it, then wait 15 minutes for amazon's version. :)
+
+Considering all of the above, I've decided to leave `paws-sdk` up, and use it
+internally, despite the official promise support. Under the hood, they're using
+pretty much the exact same logic/implementation as I am (aside from the three
+points above), so you should be safe to use this project as well. 
 
 ### alternatives
 
